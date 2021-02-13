@@ -3,8 +3,8 @@ var database;
 var foodS,foodStock;
 
 function preload(){
-   dogImg=loadImage("Images/Dog.png");
-   dogImg1=loadImage("Images/happy dog.png");
+   dogImg=loadImage("Images/dogImg.png");
+   dogImg1=loadImage("Images/dogImg1.png");
   }
 
 //Function to set initial environment
@@ -52,5 +52,16 @@ function writeStock(x){
   } 
   database.ref('/').update({
     Food:x
+  })
+}
+
+
+function feedDog(){
+  feedDog.addImage(dogImg1);
+  
+  foodObl.updateFoodStock(foodObj.getFoodStock()-1);
+  database.ref('/').update({
+      Food:foodObj.getFoodStock(),
+      FeedTime:hour()
   })
 }

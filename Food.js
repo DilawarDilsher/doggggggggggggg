@@ -30,8 +30,8 @@ class Food {
         
     }
 
-    function feedDog(){
-       feedDog.addImage(happyDog);
+         feedDog(){
+       feedDog.addImage(dogImg1);
        
        foodObl.updateFoodStock(foodObj.getFoodStock()-1);
        database.ref('/').update({
